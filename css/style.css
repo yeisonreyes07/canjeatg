@@ -263,3 +263,10 @@ select.list-dt:focus {
     width: 100%;
     object-fit: cover
 }
+
+
+/* Estilos Yeison */
+
+label.custom-file-label::after {
+    display: none;
+}
