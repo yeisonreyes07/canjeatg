@@ -229,8 +229,8 @@
 
                                             <div class="form-group col-md-6 mb-3">
                                                 <label for="inputState">Clase</label>
-                                                <select id="inputState" class="form-control">
-                                                <option selected>--</option>
+                                                <select id="inputState" class="form-control" required>
+                                                <option selected disabled ></option>
                                                 <option>Automovil</option>
                                                 <option>Camioneta</option>
                                                 <option>Moto</option>
@@ -239,8 +239,8 @@
                                             </div>
                                             <div class="form-group col-md-6 mb-3">
                                                 <label for="inputState">Año</label>
-                                                <select id="inputState" class="form-control">
-                                                <option selected>--</option>
+                                                <select id="inputState" class="form-control" required>
+                                                <option selected disabled ></option>
                                                 <option>2000</option>
                                                 <option>2001</option>
                                                 <option>2002</option>
@@ -269,8 +269,8 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6 mb-3">
                                                 <label for="inputCity">Marca</label>
-                                                <select id="inputState" class="custom-select d-block w-100">
-                                                <option selected>--</option>
+                                                <select id="inputState" class="custom-select d-block w-100" required>
+                                                    <option selected disabled ></option>
                                                 <option >Acura</option>
                                                 <option >Alfa Romeo</option>
                                                 <option >Aprilia</option>
@@ -375,18 +375,18 @@
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="placa">Placa</label>
-                                                <input type="text" name="placa" placeholder="" />
+                                                <input type="text" name="placa" placeholder="" required/>
                                             </div>
                                         </div>
 
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="modelo">Modelo</label>
-                                                <input type="text" name="modelo" placeholder="" />
+                                                <input type="text" name="modelo" placeholder="" required/>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="modelo">Color</label>
-                                                <input type="text" name="color" placeholder="" />
+                                                <input type="text" name="color" placeholder="" required/>
                                             </div>
                                         </div>
 
@@ -395,7 +395,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="placa">Tipo</label>
                                                 <select class="custom-select d-block w-100" id="Tipo" required>
-                                                    <option >--</option>
+                                                    <option selected disabled ></option>
                                                     <option >Coupé</option>
                                                     <option >Cross Over</option>
                                                     <option >Furgón</option>
