@@ -1,4 +1,5 @@
 function validate1(val) {
+    vc = document.getElementById("codigo");
     v1 = document.getElementById("fname");
     v2 = document.getElementById("lname");
     v3 = document.getElementById("email");

@@ -32,7 +32,7 @@
                     <p>Llena todo el formulario para continuar</p>
                     <div class="row">
                         <div class="col-md-12 mx-0">
-                            <form id="msform" class="needs-validation" novalidate>
+                            <form id="msform" action="" method="POST" class="needs-validation" novalidate>
                                 <!-- progressbar -->
                                 <ul id="progressbar">
                                     <li class="active" id="payment"><strong>Tarjeta</strong></li>
@@ -45,27 +45,28 @@
                                     <div class="form-card">
                                         <h2 class="fs-title">Informacion de la Tarjeta</h2>
 
-                                        <input type="number" name="number" placeholder="Codigo" />
+                                        <input type="number" id="codigo" name="codigo" placeholder="Codigo" required/>
                                         <div class="valid-feedback">
                                             Bien!
                                         </div>
                                         <div class="invalid-feedback">
-                                            Please provide a valid city.
+                                            Error
                                         </div>
                                         <p>¿Estas renovando tu plan?</p>
                                         <label class="radio-container m-r-55">Si
-                                            <input type="radio" checked="checked" name="exist">
+                                            <input type="radio" checked="checked" name="exist" required>
                                             <span class="checkmark"></span>
+                                            
                                         </label>
                                         <label class="radio-container">No
-                                            <input type="radio" name="exist">
+                                            <input type="radio" name="exist" required>
                                             <span class="checkmark"></span>
                                         </label>
                                         </input>
                                         <!-- Segundo paso -->
                                     </div>
 
-                                    <input type="button" name="next1" class="next action-button" value="Siguiente">
+                                    <input id="next" type="submit" name="next" class="next action-button" value="Siguiente">
 
                                 </fieldset>
                                 <fieldset>
@@ -88,9 +89,16 @@
                                         <h2 class="fs-title">Informacion personal</h2>
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
-                                                <input type="text" name="fname" placeholder="Nombres" /></div>
+                                                <label>Nombres</label>
+                                                <input type="text" name="fname" placeholder="" required/>
+                                                <div class="valid-feedback"> Bien!</div>
+                                                <div class="invalid-feedback">Error</div>
+                                            </div>
                                             <div class="col-md-6 mb-3">
-                                                <input type="text" name="lname" placeholder="Apellidos" />
+                                                <label>Apellidos</label>
+                                                <input type="text" name="lname" placeholder="" required/>
+                                                <div class="valid-feedback"> Bien!</div>
+                                                <div class="invalid-feedback">Error</div>
                                             </div>
                                         </div>
 
@@ -98,7 +106,8 @@
                                             <div class="col-md-4 mb-3">
 
                                                 <select class="custom-select d-block w-100" id="state" required>
-                                              <option value="">V- </option>
+                                                <option></option>        
+                                              <option>V- </option>
                                               <option>J- </option>
                                               <option>E- </option>
                                               <option>G- </option>
@@ -107,7 +116,7 @@
                                                     Selecciona una opcion valida
                                                 </div>
                                             </div>
-                                            <div class="col-md-8 mb-3"> <input type="number" name="cedula" placeholder="Cedula / RIF" />
+                                            <div class="col-md-8 mb-3"> <input type="number" name="cedula" placeholder="Cedula / RIF" required/>
                                             </div>
                                         </div>
 
@@ -116,7 +125,8 @@
                                             <div class="col-md-4 mb-3">
 
                                                 <select class="custom-select d-block w-100" id="celular" required>
-                                              <option value="">0414</option>
+                                                <option value=""></option>
+                                              <option>0414</option>
                                               <option>0424</option>
                                               <option>0412</option>
                                               <option>0416</option>
@@ -128,7 +138,7 @@
 
                                             </div>
                                             <div class="col-md-8 mb-3">
-                                                <input type="number" name="celular" placeholder="Celular" />
+                                                <input type="number" name="celular" placeholder="Celular" required/>
                                             </div>
                                         </div>
 
@@ -136,23 +146,23 @@
 
                                         <div class="form-group">
                                             <label>Fecha de Nacimento</label>
-                                            <input type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control">
+                                            <input type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control" required>
                                         </div>
 
 
                                         <div class="form-group">
                                             <label for="inputAddress">Direccion</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 caracas" required>
                                         </div>
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputCity">Ciudad</label>
-                                                <input type="text" class="form-control" id="inputCity">
+                                                <input type="text" class="form-control" id="ciudad" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputState">Estado</label>
-                                                <select id="inputState" class="form-control">
+                                                <select id="inputState" class="form-control" required>
                                                 <option selected></option>
                                                 <option></option>
                                               </select>
@@ -162,8 +172,8 @@
 
                                             <div class="form-group col-md-6 mb-3">
                                                 <label for="inputState">Estado Civil</label>
-                                                <select id="inputState" class="form-control">
-                                                <option selected>--</option>
+                                                <select id="inputState" class="form-control" required>
+                                                 <option selected disabled value=""></option>
                                                 <option>Soltera/o</option>
                                                 <option>Casada/o</option>
                                                 <option>Divorciada/o</option>
@@ -172,8 +182,8 @@
                                             </div>
                                             <div class="form-group col-md-6 mb-3">
                                                 <label for="inputState">Contacto inicial</label>
-                                                <select id="inputState" class="form-control">
-                                                <option selected>--</option>
+                                                <select id="inputState" class="form-control" required>
+                                                <option selected disabled ></option>
                                                 <option>Stand de venta</option>
                                                 <option>Instagram</option>
                                                 <option>Facebook</option>
@@ -187,7 +197,7 @@
                                                 <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
                                             </div>
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
                                                 <label class="custom-file-label" name="Buscar" for="inputGroupFile01">Carnet de circulacion</label>
                                             </div>
                                         </div>
@@ -197,7 +207,7 @@
                                                 <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
                                             </div>
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
                                                 <label class="custom-file-label" name="Buscar" for="inputGroupFile01">Cedula de identidad</label>
                                             </div>
                                         </div>
@@ -205,7 +215,7 @@
 
 
                                     </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" />
-                                    <input type="button" name="next2" class="next action-button" value="Siguiente" />
+                                    <input type="submit" name="next" class="next action-button" value="Siguiente" />
                                 </fieldset>
 
 
@@ -255,7 +265,8 @@
                                                 
                                               </select>
                                             </div>
-
+                                        </div>
+                                        <div class="form-row">
                                             <div class="form-group col-md-6 mb-3">
                                                 <label for="inputCity">Marca</label>
                                                 <select id="inputState" class="custom-select d-block w-100">
@@ -366,23 +377,24 @@
                                                 <label for="placa">Placa</label>
                                                 <input type="text" name="placa" placeholder="" />
                                             </div>
+                                        </div>
 
-                                            <div class="form-row">
-                                                <div class="col-md-6 mb-3">
-                                                    <label for="modelo">Modelo</label>
-                                                    <input type="text" name="modelo" placeholder="" />
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label for="modelo">Color</label>
-                                                    <input type="text" name="color" placeholder="" />
-                                                </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="modelo">Modelo</label>
+                                                <input type="text" name="modelo" placeholder="" />
                                             </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="modelo">Color</label>
+                                                <input type="text" name="color" placeholder="" />
+                                            </div>
+                                        </div>
 
-                                            <div class="form-row">
+                                        <div class="form-row">
 
-                                                <div class="col-md-6 mb-3">
-                                                    <label for="placa">Tipo</label>
-                                                    <select class="custom-select d-block w-100" id="Tipo" required>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="placa">Tipo</label>
+                                                <select class="custom-select d-block w-100" id="Tipo" required>
                                                     <option >--</option>
                                                     <option >Coupé</option>
                                                     <option >Cross Over</option>
@@ -397,30 +409,30 @@
                                                     <option >Station Wagon</option>
                                                     <option >Techo Duro</option>
                                                 </select>
-                                                    <div class="invalid-feedback">
-                                                        Selecciona una opcion valida
-                                                    </div>
+                                                <div class="invalid-feedback">
+                                                    Selecciona una opcion valida
+                                                </div>
 
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label for="placa">Serial carroceria</label>
-                                                    <input type="number" name="Serial" placeholder="" />
-                                                </div>
                                             </div>
-
-
+                                            <div class="col-md-6 mb-3">
+                                                <label for="placa">Serial carroceria</label>
+                                                <input type="number" name="Serial" placeholder="" />
+                                            </div>
                                         </div>
-
-
-
-
-
-
 
 
                                     </div>
 
-                                    <input type="button" name="regresar" class="previous action-button-previous" value="Previous" /> <input type="submit" name="make_payment" class="next action-button" value="Confirmo" />
+
+
+
+
+
+
+
+
+
+                                    <input type="button" name="regresar" class="previous action-button-previous" value="Regresar" /> <input type="submit" name="make_payment" class="next action-button" value="Confirmo" />
                                 </fieldset>
 
 
@@ -445,7 +457,6 @@
         </div>
     </div>
     <script type='text/javascript' src='vendor/jquery/jquery.min.js'></script>
-    <script type='text/javascript' src='vendor/datepicker/daterangepicker.js'></script>
     <script>
         $(document).ready(function() {
 
@@ -526,31 +537,13 @@
         });
 
         $('.datepicker').datepicker();
-
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
     </script>
 
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-
+    <script src="js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src='js/validacion.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src='js/sweetalert.js'></script>
 </body>
 
 
