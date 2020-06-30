@@ -32,7 +32,7 @@
                     <p>Llena todo el formulario para continuar</p>
                     <div class="row">
                         <div class="col-md-12 mx-0">
-                            <form id="msform">
+                            <form id="msform" class="needs-validation" novalidate>
                                 <!-- progressbar -->
                                 <ul id="progressbar">
                                     <li class="active" id="payment"><strong>Tarjeta</strong></li>
@@ -43,7 +43,15 @@
                                 <!-- Primer paso -->
                                 <fieldset>
                                     <div class="form-card">
-                                        <h2 class="fs-title">Informacion de la Tarjeta</h2> <input type="number" name="number" placeholder="Codigo" />
+                                        <h2 class="fs-title">Informacion de la Tarjeta</h2>
+
+                                        <input type="number" name="number" placeholder="Codigo" />
+                                        <div class="valid-feedback">
+                                            Bien!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid city.
+                                        </div>
                                         <p>¿Estas renovando tu plan?</p>
                                         <label class="radio-container m-r-55">Si
                                             <input type="radio" checked="checked" name="exist">
@@ -57,7 +65,7 @@
                                         <!-- Segundo paso -->
                                     </div>
 
-                                    <input type="button" name="next" class="next action-button" value="Siguiente">
+                                    <input type="button" name="next1" class="next action-button" value="Siguiente">
 
                                 </fieldset>
                                 <fieldset>
@@ -78,8 +86,13 @@
                                         </label>
 
                                         <h2 class="fs-title">Informacion personal</h2>
-                                        <input type="text" name="fname" placeholder="Nombres" />
-                                        <input type="text" name="lname" placeholder="Apellidos" />
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <input type="text" name="fname" placeholder="Nombres" /></div>
+                                            <div class="col-md-6 mb-3">
+                                                <input type="text" name="lname" placeholder="Apellidos" />
+                                            </div>
+                                        </div>
 
                                         <div class="form-row">
                                             <div class="col-md-4 mb-3">
@@ -102,7 +115,7 @@
 
                                             <div class="col-md-4 mb-3">
 
-                                                <select class="custom-select d-block w-100" id="state" required>
+                                                <select class="custom-select d-block w-100" id="celular" required>
                                               <option value="">0414</option>
                                               <option>0424</option>
                                               <option>0412</option>
@@ -191,41 +204,226 @@
 
 
 
-                                    </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
+                                    </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" />
+                                    <input type="button" name="next2" class="next action-button" value="Siguiente" />
                                 </fieldset>
+
+
+                                <!-- Paso 3 informacion del vehiculo -->
+
                                 <fieldset>
                                     <div class="form-card">
-                                        <h2 class="fs-title">Payment Information</h2>
-                                        <div class="radio-group">
-                                            <div class='radio' data-value="credit"><img src="https://i.imgur.com/XzOzVHZ.jpg" width="200px" height="100px"></div>
-                                            <div class='radio' data-value="paypal"><img src="https://i.imgur.com/jXjwZlj.jpg" width="200px" height="100px"></div> <br>
-                                        </div> <label class="pay">Card Holder Name*</label> <input type="text" name="holdername" placeholder="" />
-                                        <div class="row">
-                                            <div class="col-9"> <label class="pay">Card Number*</label> <input type="text" name="cardno" placeholder="" /> </div>
-                                            <div class="col-3"> <label class="pay">CVC*</label> <input type="password" name="cvcpwd" placeholder="***" /> </div>
+                                        <h2 class="fs-title">Informacion del Vehiculo </h2>
+
+                                        <div class="form-row">
+
+                                            <div class="form-group col-md-6 mb-3">
+                                                <label for="inputState">Clase</label>
+                                                <select id="inputState" class="form-control">
+                                                <option selected>--</option>
+                                                <option>Automovil</option>
+                                                <option>Camioneta</option>
+                                                <option>Moto</option>
+                                                <option>Rustico</option>
+                                               </select>
+                                            </div>
+                                            <div class="form-group col-md-6 mb-3">
+                                                <label for="inputState">Año</label>
+                                                <select id="inputState" class="form-control">
+                                                <option selected>--</option>
+                                                <option>2000</option>
+                                                <option>2001</option>
+                                                <option>2002</option>
+                                                <option>2003</option>
+                                                <option>2004</option>
+                                                <option>2005</option>
+                                                <option>2006</option>
+                                                <option>2007</option>
+                                                <option>2008</option>
+                                                <option>2009</option>
+                                                <option>2010</option>
+                                                <option>2011</option>
+                                                <option>2012</option>
+                                                <option>2013</option>
+                                                <option>2014</option>
+                                                <option>2015</option>
+                                                <option>2016</option>
+                                                <option>2017</option>
+                                                <option>2018</option>
+                                                <option>2019</option>
+                                                <option>2020</option>
+                                                
+                                              </select>
+                                            </div>
+
+                                            <div class="form-group col-md-6 mb-3">
+                                                <label for="inputCity">Marca</label>
+                                                <select id="inputState" class="custom-select d-block w-100">
+                                                <option selected>--</option>
+                                                <option >Acura</option>
+                                                <option >Alfa Romeo</option>
+                                                <option >Aprilia</option>
+                                                <option >Aston Martin</option>
+                                                <option >Audi</option>
+                                                <option >Bajaj</option>
+                                                <option >Bera</option>
+                                                <option >BMW</option>
+                                                <option >BMW</option>
+                                                <option >Buick</option>
+                                                <option >BYD</option>
+                                                <option >Cadillac</option>
+                                                <option >Can-Am</option>
+                                                <option >Chana</option>
+                                                <option >Changhe</option>
+                                                <option >Chery</option>
+                                                <option >Chevrolet</option>
+                                                <option >Chrysler</option>
+                                                <option >Citroën</option>
+                                                <option >Corvette</option>
+                                                <option >Daewoo</option>
+                                                <option >Daihatsu</option>
+                                                <option >Dodge</option>
+                                                <option >Dongfeng</option>
+                                                <option >Ducati</option>
+                                                <option >Empire</option>
+                                                <option >ENCAVA</option>
+                                                <option >Ferrari</option>
+                                                <option >Fiat</option>
+                                                <option >Ford</option>
+                                                <option >FREIGHTLINER</option>
+                                                <option >Geely</option>
+                                                <option >Gilera</option>
+                                                <option >Great Wall</option>
+                                                <option >Hafei</option>
+                                                <option >Haima</option>
+                                                <option >HAOJUE</option>
+                                                <option >Harley Davidson</option>
+                                                <option >Honda</option>
+                                                <option >Hummer</option>
+                                                <option >Husqvarna</option>
+                                                <option >Hyundai</option>
+                                                <option >Infiniti</option>
+                                                <option >Isuzu</option>
+                                                <option >IVECO</option>
+                                                <option >JAC</option>
+                                                <option >JACK</option>
+                                                <option >Jaguar</option>
+                                                <option >Jeep</option>
+                                                <option >JMC</option>
+                                                <option >Kawasaki</option>
+                                                <option >Keeway</option>
+                                                <option >KENWORTH</option>
+                                                <option >Kia</option>
+                                                <option >KTM</option>
+                                                <option >Lada</option>
+                                                <option >Land Rover</option>
+                                                <option >Lexus</option>
+                                                <option >Lifan</option>
+                                                <option >Lincoln</option>
+                                                <option >LML</option>
+                                                <option >MACK</option>
+                                                <option >Maserati</option>
+                                                <option >MD</option>
+                                                <option >Mercedes Benz</option>
+                                                <option >Mercury</option>
+                                                <option >Mini</option>
+                                                <option >Mitsubishi</option>
+                                                <option >Nissan</option>
+                                                <option >Otra</option>
+                                                <option >Peugeot</option>
+                                                <option >PIAGGIO</option>
+                                                <option >Polifit</option>
+                                                <option >Pontiac</option>
+                                                <option >Porsche</option>
+                                                <option >Renault</option>
+                                                <option >Saic Wuling</option>
+                                                <option >Saipa/Venirauto</option>
+                                                <option >Scion</option>
+                                                <option >Seat</option>
+                                                <option >Skoda</option>
+                                                <option >Skygo</option>
+                                                <option >Smart</option>
+                                                <option >Subaru</option>
+                                                <option >Suzuki</option>
+                                                <option >Tata</option>
+                                                <option >Toyota</option>
+                                                <option >Triumph</option>
+                                                <option >Tyanye</option>
+                                                <option >Unico</option>
+                                                <option >United Motors</option>
+                                                <option >Venirauto</option>
+                                                <option >Vespa</option>
+                                                <option >Volkswagen</option>
+                                                <option >VOLVO</option>
+                                                <option >Yamaha</option>
+                                                <option >Zhongxing</option>
+                                                <option >Zotye</option>
+                                              </select>
+                                            </div>
+
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="placa">Placa</label>
+                                                <input type="text" name="placa" placeholder="" />
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="modelo">Modelo</label>
+                                                    <input type="text" name="modelo" placeholder="" />
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="modelo">Color</label>
+                                                    <input type="text" name="color" placeholder="" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="placa">Tipo</label>
+                                                    <select class="custom-select d-block w-100" id="Tipo" required>
+                                                    <option >--</option>
+                                                    <option >Coupé</option>
+                                                    <option >Cross Over</option>
+                                                    <option >Furgón</option>
+                                                    <option >Hatchback</option>
+                                                    <option >Mini Van</option>
+                                                    <option >Panel</option>
+                                                    <option >Pick Up</option>
+                                                    <option >Rústico</option>
+                                                    <option >Sedán</option>
+                                                    <option >Sport Wagon</option>
+                                                    <option >Station Wagon</option>
+                                                    <option >Techo Duro</option>
+                                                </select>
+                                                    <div class="invalid-feedback">
+                                                        Selecciona una opcion valida
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="placa">Serial carroceria</label>
+                                                    <input type="number" name="Serial" placeholder="" />
+                                                </div>
+                                            </div>
+
+
                                         </div>
-                                        <div class="row">
-                                            <div class="col-3"> <label class="pay">Expiry Date*</label> </div>
-                                            <div class="col-9"> <select class="list-dt" id="month" name="expmonth">
-                                                <option selected>Mes</option>
-                                                <option>Enero</option>
-                                                <option>Febrero</option>
-                                                <option>Marzo</option>
-                                                <option>Abril</option>
-                                                <option>Mayo</option>
-                                                <option>Junio</option>
-                                                <option>Julio</option>
-                                                <option>Augosto</option>
-                                                <option>Septiembre</option>
-                                                <option>Octubre</option>
-                                                <option>Noviembre</option>
-                                                <option>Diciembre</option>
-                                            </select> <select class="list-dt" id="year" name="expyear">
-                                                <option selected>Year</option>
-                                            </select> </div>
-                                        </div>
-                                    </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="make_payment" class="next action-button" value="Confirm" />
+
+
+
+
+
+
+
+
+                                    </div>
+
+                                    <input type="button" name="regresar" class="previous action-button-previous" value="Previous" /> <input type="submit" name="make_payment" class="next action-button" value="Confirmo" />
                                 </fieldset>
+
+
                                 <fieldset>
                                     <div class="form-card">
                                         <h2 class="fs-title text-center">Success !</h2> <br><br>
@@ -328,6 +526,24 @@
         });
 
         $('.datepicker').datepicker();
+
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
     </script>
 
 
