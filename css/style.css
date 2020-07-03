@@ -235,6 +235,10 @@ select.list-dt:focus {
     background: var(--color-principal);
 }
 
+img.img-tarjetas {
+    max-width: 100%;
+}
+
 .radio-group {
     position: relative;
     margin-bottom: 25px
