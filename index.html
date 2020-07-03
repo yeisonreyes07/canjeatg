@@ -44,7 +44,7 @@
                                 <fieldset>
                                     <div class="form-card">
                                         <h2 class="fs-title">Informacion de la Tarjeta</h2>
-                                        <img class="img-tarjetas" src="/img/tarjetastugruero-01.png" />
+                                        <img class="img-tarjetas" loading="lazy" src="/img/tarjetastugruero-01.png" />
                                         <label>Codigo de la tarjeta</label>
                                         <input type="number" id="codigo" name="codigo" laceholder="Codigo" onblur="validate1(1)" required/>
                                         <div class="valid-feedback">
@@ -54,6 +54,7 @@
                                             Error
                                         </div>
                                         <p>¿Estas renovando tu plan?</p>
+
                                         <label class="radio-container m-r-55">Si
                                             <input type="radio" checked="checked" name="exist" required>
                                             <span class="checkmark"></span>
@@ -104,6 +105,7 @@
                                         </div>
 
                                         <div class="form-row">
+
                                             <div class="col-md-4 mb-3">
 
                                                 <select class="custom-select per d-block w-100" id="state" required>
@@ -117,7 +119,10 @@
                                                     Selecciona una opcion valida
                                                 </div>
                                             </div>
-                                            <div class="col-md-8 mb-3"> <input type="number" name="cedula" placeholder="Cedula / RIF" required/>
+
+                                            <div class="col-md-8 mb-3">
+
+                                                <input type="number" name="cedula" placeholder="Cedula / RIF" required/>
                                             </div>
                                         </div>
 
@@ -139,6 +144,7 @@
 
                                             </div>
                                             <div class="col-md-8 mb-3">
+
                                                 <input type="number" name="celular" placeholder="Celular" required/>
                                             </div>
                                         </div>

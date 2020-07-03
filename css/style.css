@@ -40,7 +40,14 @@ strong {
 }
 
 #grad1 {
-    background: var(--color-principal);
+    background: rgb(213, 118, 58);
+    background: radial-gradient(circle, rgba(213, 118, 58, 1) 61%, rgba(161, 99, 60, 0.9878326330532213) 100%);
+}
+
+label {
+    color: #2d3033;
+    font-family: 'Nunito';
+    font-weight: 700;
 }
 
 #msform {
