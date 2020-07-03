@@ -35,6 +35,10 @@ strong {
     margin-bottom: 18px;
 }
 
+.per {
+    background-color: #e5e5e5 !important;
+}
+
 #grad1 {
     background: var(--color-principal);
 }
@@ -79,10 +83,10 @@ strong {
 
 #msform input,
 #msform textarea {
-    padding: 0px 8px 4px 8px;
-    border: none;
+    padding: 4px 8px 4px 8px;
+    border: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    border-radius: 0px;
+    border-radius: 5px;
     margin-bottom: 25px;
     margin-top: 2px;
     width: 100%;
@@ -90,7 +94,8 @@ strong {
     font-family: nunito;
     color: var(--color-principal);
     font-size: 16px;
-    letter-spacing: 1px
+    letter-spacing: 1px;
+    background-color: #e5e5e5;
 }
 
 #msform input:focus,
@@ -186,36 +191,32 @@ select.list-dt:focus {
 }
 
 #progressbar #account:before {
-    font-family: FontAwesome;
-    content: "\f023"
+    content: url("/img/car.png");
 }
 
 #progressbar #personal:before {
-    font-family: FontAwesome;
-    content: "\f007"
+    content: url("/img/user.png");
 }
 
 #progressbar #payment:before {
-    font-family: FontAwesome;
-    content: "\f09d"
+    content: url("/img/credit-card-3.png");
 }
 
 #progressbar #confirm:before {
-    font-family: FontAwesome;
-    content: "\f00c"
+    content: url("/img/success-1.png");
 }
 
 #progressbar li:before {
     width: 50px;
     height: 50px;
-    line-height: 45px;
+    line-height: 0;
     display: block;
-    font-size: 18px;
+    font-size: 0px;
     color: #ffffff;
     background: lightgray;
     border-radius: 50%;
-    margin: 0 auto 10px auto;
-    padding: 2px
+    margin: 0 auto 8px auto;
+    padding: 13px;
 }
 
 #progressbar li:after {
