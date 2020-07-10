@@ -4,20 +4,12 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Tu Gruero - Canje de Tarjetas</title>
-
+    <title>DEV - Tu Gruero - Canje de Tarjetas</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/bootstrap-pincode-input.css' rel='stylesheet'>
     <link href='vendor/font-awesome-4.7/css/font-awesome.css' rel='stylesheet'>
-
-
-
-
-
-
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet">
-
 </head>
 
 
@@ -44,9 +36,19 @@
                                 <fieldset>
                                     <div class="form-card">
                                         <h2 class="fs-title">Informacion de la Tarjeta</h2>
-                                        <img class="img-tarjetas" loading="lazy" src="/img/tarjetastugruero-01.png" />
+                                        <div class="form-row">
+                                            <div id="classic" class="form-group col-md-4 selected" type="radio">
+                                                <img class="img-tarjetas" loading="lazy" src="/img/plan-classic.png" />
+                                            </div>
+                                            <div id="plus" class="form-group col-md-4 selected" type="radio">
+                                                <img class="img-tarjetas" loading="lazy" src="/img/plan-plus.png" />
+                                            </div>
+                                            <div id="gold" class="form-group col-md-4 selected" type="radio">
+                                                <img class="img-tarjetas" loading="lazy" src="/img/plan-gold.png" />
+                                            </div>
+                                        </div>
                                         <label>Codigo de la tarjeta</label>
-                                        <input type="number" id="codigo" name="codigo" laceholder="Codigo" onblur="validate1(1)" required/>
+                                        <input type="text" id="codigo" name="codigo" class="" value="" placeholder="Codigo" />
                                         <div class="valid-feedback">
                                             Bien!
                                         </div>
@@ -74,7 +76,6 @@
                                 <fieldset>
                                     <div class="form-card">
                                         <h2 class="fs-title">Tu plan</h2>
-
                                         <label class="radio-container m-r-55">Plan Classic
                                             <input type="radio" checked="checked" name="exist">
                                             <span class="checkmark"></span>
@@ -87,7 +88,6 @@
                                             <input type="radio" name="exist">
                                             <span class="checkmark"></span>
                                         </label>
-
                                         <h2 class="fs-title">Informacion personal</h2>
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
@@ -103,11 +103,8 @@
                                                 <div class="invalid-feedback">Error</div>
                                             </div>
                                         </div>
-
                                         <div class="form-row">
-
                                             <div class="col-md-4 mb-3">
-
                                                 <select class="custom-select per d-block w-100" id="state" required>
                                                 <option></option>        
                                               <option>V- </option>
@@ -119,17 +116,12 @@
                                                     Selecciona una opcion valida
                                                 </div>
                                             </div>
-
                                             <div class="col-md-8 mb-3">
-
                                                 <input type="number" name="cedula" placeholder="Cedula / RIF" required/>
                                             </div>
                                         </div>
-
                                         <div class="form-row">
-
                                             <div class="col-md-4 mb-3">
-
                                                 <select class="custom-select per d-block w-100" id="celular" required>
                                                 <option value=""></option>
                                               <option>0414</option>
@@ -141,27 +133,19 @@
                                                 <div class="invalid-feedback">
                                                     Selecciona una opcion valida
                                                 </div>
-
                                             </div>
                                             <div class="col-md-8 mb-3">
-
                                                 <input type="number" name="celular" placeholder="Celular" required/>
                                             </div>
                                         </div>
-
-
-
                                         <div class="form-group">
                                             <label>Fecha de Nacimento</label>
                                             <input type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control" required>
                                         </div>
-
-
                                         <div class="form-group">
                                             <label for="inputAddress">Direccion</label>
                                             <input type="text" class="form-control" id="inputAddress" placeholder="1234 caracas" required>
                                         </div>
-
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputCity">Ciudad</label>
@@ -176,7 +160,6 @@
                                             </div>
                                         </div>
                                         <div class="form-row">
-
                                             <div class="form-group col-md-6 mb-3">
                                                 <label for="inputState">Estado Civil</label>
                                                 <select id="inputState" class="form-control per" required>
@@ -198,7 +181,6 @@
                                               </select>
                                             </div>
                                         </div>
-
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
@@ -208,7 +190,6 @@
                                                 <label class="custom-file-label" name="Buscar" for="inputGroupFile01">Carnet de circulacion</label>
                                             </div>
                                         </div>
-
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
@@ -218,22 +199,14 @@
                                                 <label class="custom-file-label" name="Buscar" for="inputGroupFile01">Cedula de identidad</label>
                                             </div>
                                         </div>
-
-
-
                                     </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" />
                                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                                 </fieldset>
-
-
                                 <!-- Paso 3 informacion del vehiculo -->
-
                                 <fieldset>
                                     <div class="form-card">
                                         <h2 class="fs-title">Informacion del Vehiculo </h2>
-
                                         <div class="form-row">
-
                                             <div class="form-group col-md-6 mb-3">
                                                 <label for="inputState">Clase</label>
                                                 <select id="inputState" class="form-control per" required>
@@ -269,8 +242,7 @@
                                                 <option>2018</option>
                                                 <option>2019</option>
                                                 <option>2020</option>
-                                                
-                                              </select>
+												</select>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -378,14 +350,11 @@
                                                 <option >Zotye</option>
                                               </select>
                                             </div>
-
-
                                             <div class="col-md-6 mb-3">
                                                 <label for="placa">Placa</label>
                                                 <input type="text" name="placa" placeholder="" required/>
                                             </div>
                                         </div>
-
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="modelo">Modelo</label>
@@ -396,9 +365,7 @@
                                                 <input type="text" name="color" placeholder="" required/>
                                             </div>
                                         </div>
-
                                         <div class="form-row">
-
                                             <div class="col-md-6 mb-3">
                                                 <label for="placa">Tipo</label>
                                                 <select class="custom-select per d-block w-100" id="Tipo" required>
@@ -419,30 +386,15 @@
                                                 <div class="invalid-feedback">
                                                     Selecciona una opcion valida
                                                 </div>
-
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="placa">Serial carroceria</label>
                                                 <input type="text" name="Serial" placeholder="" />
                                             </div>
                                         </div>
-
-
                                     </div>
-
-
-
-
-
-
-
-
-
-
                                     <input type="button" name="regresar" class="previous action-button-previous" value="Regresar" /> <input type="submit" name="make_payment" class="next action-button" value="Confirmo" />
                                 </fieldset>
-
-
                                 <fieldset>
                                     <div class="form-card">
                                         <h2 class="fs-title text-center">Success !</h2> <br><br>
@@ -464,15 +416,18 @@
         </div>
     </div>
     <script type='text/javascript' src='vendor/jquery/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="js/bootstrap-pincode-input.js?ver=1.2"></script>
     <script>
+        function canjeCallBack(e) {
+            console.log('this: ' + e);
+        }
+
         function validate1(val) {
-
             v1 = document.getElementById("codigo");
-
-
             flag1 = true;
-
-
             if (val >= 1 || val == 0) {
                 if (v1.value == "") {
                     v1.style.borderColor = "red";
@@ -482,30 +437,17 @@
                     flag1 = true;
                 }
             }
-
-
-
             flag = flag1;
-
             return flag;
         }
-
-
-
-
         $(document).ready(function() {
-
             var current_fs, next_fs, previous_fs; //fieldsets
             var opacity;
-
             $(".next").click(function() {
-
                 current_fs = $(this).parent();
                 next_fs = $(this).parent().next();
-
                 //Add Class Active
                 $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
                 //show the next fieldset
                 next_fs.show();
                 //hide the current fieldset with style
@@ -515,7 +457,6 @@
                     step: function(now) {
                         // for making fielset appear animation
                         opacity = 1 - now;
-
                         current_fs.css({
                             'display': 'none',
                             'position': 'relative'
@@ -527,18 +468,13 @@
                     duration: 600
                 });
             });
-
             $(".previous").click(function() {
-
                 current_fs = $(this).parent();
                 previous_fs = $(this).parent().prev();
-
                 //Remove class active
                 $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
                 //show the previous fieldset
                 previous_fs.show();
-
                 //hide the current fieldset with style
                 current_fs.animate({
                     opacity: 0
@@ -546,7 +482,6 @@
                     step: function(now) {
                         // for making fielset appear animation
                         opacity = 1 - now;
-
                         current_fs.css({
                             'display': 'none',
                             'position': 'relative'
@@ -558,20 +493,63 @@
                     duration: 600
                 });
             });
-
-
             $('.radio-group .radio').click(function() {
                 $(this).toggleClass('selected');
             });
-
+            $('#codigo').pincodeInput({
+                inputs: 8,
+                pattern: '[a-zA-Z0-9 ]',
+                inputtype: 'text',
+                inputmode: 'text',
+                complete: function(value, e, errorElement) {
+                    console.log("code entered: " + value);
+                    $.ajax({
+                        url: "https://admin.tugruero.io/api/val_canje.php",
+                        dataType: "jsonp", // jsonp
+                        method: "POST",
+                        jsonpCallback: 'canjeCallBack', // add this property
+                        //data: { name: "John", location: "Boston" }
+                        data: {
+                            number: $('#codigo').val()
+                        },
+                        contentType: "application/json; charset=utf-8",
+                        success: function(data, status, xhr) {
+                            console.log(data);
+                            if (data.success) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Correcto',
+                                    text: data.msg,
+                                    confirmButtonColor: '#f37021',
+                                })
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: data.msg,
+                                    confirmButtonColor: '#f37021',
+                                })
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.log("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: "Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText,
+                                confirmButtonColor: '#f37021',
+                            })
+                        }
+                    });
+                    /*do some code checking here*/
+                    /*$.post( "https://admin.tugruero.io/api/val_canje.php", { number:value}, function( data ) {
+						console.log(data); // John
+						
+						}, "json");*/
+                }
+            });
         });
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
 </body>
-
 
 </html>
