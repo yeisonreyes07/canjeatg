@@ -10,6 +10,8 @@
     <link href='css/bootstrap-pincode-input.css' rel='stylesheet'>
     <link href='vendor/font-awesome-4.7/css/font-awesome.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="css/bootstrap-toggle.css" rel="stylesheet">
+
 </head>
 
 
@@ -57,16 +59,11 @@
                                         </div>
                                         <p>¿Estas renovando tu plan?</p>
 
-                                        <label class="radio-container m-r-55">Si
-                                            <input type="radio" checked="checked" name="exist" required>
-                                            <span class="checkmark"></span>
-                                            
-                                        </label>
-                                        <label class="radio-container">No
-                                            <input type="radio" name="exist" required>
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        </input>
+                                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+
+
+
+
                                         <!-- Segundo paso -->
                                     </div>
 
@@ -415,11 +412,13 @@
             </div>
         </div>
     </div>
-    <script type='text/javascript' src='vendor/jquery/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="js/bootstrap-pincode-input.js?ver=1.2"></script>
+    <script src="js/bootstrap-toggle.js"></script>
     <script>
         function canjeCallBack(e) {
             console.log('this: ' + e);
@@ -496,6 +495,9 @@
             $('.radio-group .radio').click(function() {
                 $(this).toggleClass('selected');
             });
+
+
+
             $('#codigo').pincodeInput({
                 inputs: 8,
                 pattern: '[a-zA-Z0-9 ]',
