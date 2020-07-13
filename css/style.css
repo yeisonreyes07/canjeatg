@@ -39,6 +39,14 @@ strong {
     background-color: #e5e5e5 !important;
 }
 
+.form-group.col-md-4.tarjeta {
+    filter: grayscale(10) blur(0.8px);
+}
+
+.form-group.col-md-4.tarjeta.selected {
+    filter: none;
+}
+
 #grad1 {
     background: rgb(213, 118, 58);
     background: radial-gradient(circle, rgba(213, 118, 58, 1) 61%, rgba(161, 99, 60, 0.9878326330532213) 100%);
